@@ -1,0 +1,9 @@
+1 state change-fill ad list-pick 1 st add -current ship to add
+
+2 update prev add-
+
+ShipTo currentShipTo = getSalesDocumentBean().getBO().getHeader()
+				.getShipTo();
+
+
+OSS 200283|staff Hub|Shipping Details not expanding automatically

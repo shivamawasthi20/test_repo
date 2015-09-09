@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+char *decimal_to_binary(int);
+
+int main() {
+
+    int t,i,num,j=1,rem,dec_num=0;
+    char *ptr;
+    
+   scanf("%d",&t); 
+   for(i=0;i<t;i++)
+       {
+       scanf("%d",&num);
+       ptr=decimal_to_binary(num);
+       
+       
+       
+       printf("%d",dec_num);
+   }
+    
+    return 0;
+}
+char *decimal_to_binary(int n)
+{
+   int c, d, count;
+   char *pointer;
+ 
+   count = 0;
+   pointer = (char*)malloc(32+1);
+ 
+   if ( pointer == NULL )
+      exit(EXIT_FAILURE);
+ 
+   for ( c = 31 ; c >= 0 ; c-- )
+   {
+      d = n >> c;
+ 
+      if ( d & 1 )
+         *(pointer+count) = !(1 + '0')*pow(2,c+1);
+      else
+         *(pointer+count) = !(0 + '0')*pow(2,c+1);
+ 
+      count++;
+   }
+   *(pointer+count) = '\0';
+ 
+   return  pointer;
+}

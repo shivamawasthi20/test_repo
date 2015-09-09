@@ -1,0 +1,452 @@
+com.sap.engine.services.dc.api.deploy.DeployException: [ERROR CODE DPL.DCAPI.1027] DeploymentException.
+Reason: ASJ.dpl_dc.001085 Operation [deploy] of [duluxgroup_hub~ecom~mc~chekout~dpu] failed
+	at com.sap.engine.services.dc.api.deploy.impl.DeployProcessorImpl.deployItems(DeployProcessorImpl.java:862)
+	at com.sap.engine.services.dc.api.deploy.impl.DeployProcessorImpl.deploy(DeployProcessorImpl.java:259)
+	at com.sap.ide.eclipse.deployer.dc.deploy.DeployProcessor70.deploy(DeployProcessor70.java:105)
+	at com.sap.ide.tools.services.dc.EngineDcDeployService.deployFiles(EngineDcDeployService.java:257)
+	at com.sap.ide.tools.services.dc.EngineDcDeployService.deploy(EngineDcDeployService.java:135)
+	at com.sap.ide.dii05.ui.internal.actions.dc.DcDeployAction$5$1.run(DcDeployAction.java:282)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: com.sap.engine.services.dc.cm.deploy.DeploymentException: ASJ.dpl_dc.001085 Operation [deploy] of [duluxgroup_hub~ecom~mc~chekout~dpu] failed
+	at com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:246)
+	at com.sap.engine.services.dc.cm.deploy.impl.BulkOnlineDeployProcessor.deploy(BulkOnlineDeployProcessor.java:67)
+	at com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor$DeployProcessorHelper.visit(AbstractDeployProcessor.java:282)
+	at com.sap.engine.services.dc.cm.deploy.impl.DeploymentItemImpl.accept(DeploymentItemImpl.java:84)
+	at com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor.deploy(AbstractDeployProcessor.java:100)
+	at com.sap.engine.services.dc.cm.deploy.impl.DeployThread.run(DeployThread.java:39)
+	at com.sap.engine.core.thread.execution.Executable.run(Executable.java:122)
+	at com.sap.engine.core.thread.execution.Executable.run(Executable.java:101)
+	at com.sap.engine.core.thread.execution.CentralExecutor$SingleThread.run(CentralExecutor.java:328)
+Caused by: com.sap.engine.services.dc.gd.DeliveryException: [ERROR CODE DPL.DC.3297] Operation [update] of [sdu id: [duluxgroup_hub~ecom~mc~chekout~dpu]
+sdu file path: [/usr/sap/WC1/J60/j2ee/cluster/server0/temp/tc~bl~deploy_controller/archives/9669/duluxgroup~hub~ecom~mc~chekout~dpu.ear]
+version status: [HIGHER]
+deployment status: [Admitted]
+description: []
+] failed
+	at com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:100)
+	at com.sap.engine.services.dc.gd.impl.InitialApplicationDeployer.performDeployment(InitialApplicationDeployer.java:141)
+	at com.sap.engine.services.dc.gd.impl.InitialGenericDeliveryImpl.deploy(InitialGenericDeliveryImpl.java:57)
+	at com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:213)
+	... 8 more
+Caused by: com.sap.engine.services.deploy.server.utils.DSRemoteException: ASJ.dpl_ds.006193 Operation [update] of [/usr/sap/WC1/J60/j2ee/cluster/server0/temp/tc~bl~deploy_controller/archives/9669/duluxgroup~hub~ecom~mc~chekout~dpu.ear] failed
+	at com.sap.engine.services.deploy.server.DeployServiceImpl.catchDeploymentExceptionWithDSRem(DeployServiceImpl.java:3362)
+	at com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:489)
+	at com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:74)
+	... 11 more
+Caused by: com.sap.engine.services.deploy.exceptions.ServerDeploymentException: Exception while [registering [stopApp] of [duluxgroup/hub~ecom~mc~chekout~dpu].
+Reason: com.sap.engine.services.deploy.server.utils.concurrent.LockSetNotAcquiredException: The thread DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+timed out while trying to get the locks for operation [stopApp : duluxgroup/hub~ecom~mc~chekout~dpu]
+Has been waiting for exclusive lock for the node [duluxgroup/hub~comm~wcb~leanapp],
+which is held shared by the following threads:
+	DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+
+
+Active threads:
+Thread:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+ owns the following locks:
+			duluxgroup/hub~comm~main~leanapp - shared
+			duluxgroup/hub~comm~wcb~leanapp - shared
+			duluxgroup/hub~ecom~mc~chekout~dpu - exclusive
+Thread:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+ owns the following locks:
+			duluxgroup/hub~comm~mc~trade~dpu - exclusive
+			duluxgroup/hub~comm~main~leanapp - shared
+			duluxgroup/hub~comm~wcb~leanapp - shared
+
+Needed locks:
+	[duluxgroup/hub~comm~wcb~leanapp]
+
+Waiting threads: DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+
+Call stacks:
+DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+java.lang.Thread.dumpThreads(Native Method)
+java.lang.Thread.getAllStackTraces(Thread.java:1620)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.getReasonForFailure(LockManagerImpl.java:351)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lock(LockManagerImpl.java:156)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lockDependants(LockManagerImpl.java:399)
+com.sap.engine.services.deploy.server.application.StopTransaction.lock(StopTransaction.java:127)
+com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:121)
+com.sap.engine.services.deploy.server.TransactionManager.registerTransaction(TransactionManager.java:80)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.stopRelatedApplication(ApplicationTransaction.java:760)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.needStopApplicationPhase(UpdateTransaction.java:700)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getContainersWhichNeedUpdate(UpdateTransaction.java:646)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getConcernedContainers(UpdateTransaction.java:577)
+com.sap.engine.services.deploy.server.application.DeployUtilTransaction.commonBegin(DeployUtilTransaction.java:145)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.begin(UpdateTransaction.java:234)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhasesOnOneServer(ApplicationTransaction.java:421)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhases(ApplicationTransaction.java:473)
+com.sap.engine.services.deploy.server.DeployServiceImpl.makeGlobalTransaction(DeployServiceImpl.java:1828)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:582)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:487)
+com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:74)
+com.sap.engine.services.dc.gd.impl.InitialApplicationDeployer.performDeployment(InitialApplicationDeployer.java:141)
+com.sap.engine.services.dc.gd.impl.InitialGenericDeliveryImpl.deploy(InitialGenericDeliveryImpl.java:57)
+com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:213)
+com.sap.engine.services.dc.cm.deploy.impl.BulkOnlineDeployProcessor.deploy(BulkOnlineDeployProcessor.java:67)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor$DeployProcessorHelper.visit(AbstractDeployProcessor.java:282)
+com.sap.engine.services.dc.cm.deploy.impl.DeploymentItemImpl.accept(DeploymentItemImpl.java:84)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor.deploy(AbstractDeployProcessor.java:100)
+com.sap.engine.services.dc.cm.deploy.impl.DeployThread.run(DeployThread.java:39)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:122)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:101)
+com.sap.engine.core.thread.execution.CentralExecutor$SingleThread.run(CentralExecutor.java:328)
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+sun.misc.Unsafe.park(Native Method)
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2116)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lock(LockManagerImpl.java:152)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lockDependants(LockManagerImpl.java:399)
+com.sap.engine.services.deploy.server.application.StopTransaction.lock(StopTransaction.java:127)
+com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:121)
+com.sap.engine.services.deploy.server.TransactionManager.registerTransaction(TransactionManager.java:80)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.stopRelatedApplication(ApplicationTransaction.java:760)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.needStopApplicationPhase(UpdateTransaction.java:700)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getContainersWhichNeedUpdate(UpdateTransaction.java:646)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getConcernedContainers(UpdateTransaction.java:577)
+com.sap.engine.services.deploy.server.application.DeployUtilTransaction.commonBegin(DeployUtilTransaction.java:145)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.begin(UpdateTransaction.java:234)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhasesOnOneServer(ApplicationTransaction.java:421)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhases(ApplicationTransaction.java:473)
+com.sap.engine.services.deploy.server.DeployServiceImpl.makeGlobalTransaction(DeployServiceImpl.java:1828)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:582)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:487)
+com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:74)
+com.sap.engine.services.dc.gd.impl.InitialApplicationDeployer.performDeployment(InitialApplicationDeployer.java:141)
+com.sap.engine.services.dc.gd.impl.InitialGenericDeliveryImpl.deploy(InitialGenericDeliveryImpl.java:57)
+com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:213)
+com.sap.engine.services.dc.cm.deploy.impl.BulkOnlineDeployProcessor.deploy(BulkOnlineDeployProcessor.java:67)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor$DeployProcessorHelper.visit(AbstractDeployProcessor.java:282)
+com.sap.engine.services.dc.cm.deploy.impl.DeploymentItemImpl.accept(DeploymentItemImpl.java:84)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor.deploy(AbstractDeployProcessor.java:100)
+com.sap.engine.services.dc.cm.deploy.impl.DeployThread.run(DeployThread.java:39)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:122)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:101)
+com.sap.engine.core.thread.execution.CentralExecutor$SingleThread.run(CentralExecutor.java:328)
+].
+	at com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:123)
+	at com.sap.engine.services.deploy.server.TransactionManager.registerTransaction(TransactionManager.java:80)
+	at com.sap.engine.services.deploy.server.application.ApplicationTransaction.stopRelatedApplication(ApplicationTransaction.java:760)
+	at com.sap.engine.services.deploy.server.application.UpdateTransaction.needStopApplicationPhase(UpdateTransaction.java:700)
+	at com.sap.engine.services.deploy.server.application.UpdateTransaction.getContainersWhichNeedUpdate(UpdateTransaction.java:646)
+	at com.sap.engine.services.deploy.server.application.UpdateTransaction.getConcernedContainers(UpdateTransaction.java:577)
+	at com.sap.engine.services.deploy.server.application.DeployUtilTransaction.commonBegin(DeployUtilTransaction.java:145)
+	at com.sap.engine.services.deploy.server.application.UpdateTransaction.begin(UpdateTransaction.java:234)
+	at com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhasesOnOneServer(ApplicationTransaction.java:421)
+	at com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhases(ApplicationTransaction.java:473)
+	at com.sap.engine.services.deploy.server.DeployServiceImpl.makeGlobalTransaction(DeployServiceImpl.java:1828)
+	at com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:582)
+	at com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:487)
+	... 12 more
+Caused by: com.sap.engine.services.deploy.server.utils.concurrent.LockSetNotAcquiredException: The thread DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+timed out while trying to get the locks for operation [stopApp : duluxgroup/hub~ecom~mc~chekout~dpu]
+Has been waiting for exclusive lock for the node [duluxgroup/hub~comm~wcb~leanapp],
+which is held shared by the following threads:
+	DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+
+
+Active threads:
+Thread:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+ owns the following locks:
+			duluxgroup/hub~comm~main~leanapp - shared
+			duluxgroup/hub~comm~wcb~leanapp - shared
+			duluxgroup/hub~ecom~mc~chekout~dpu - exclusive
+Thread:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+ owns the following locks:
+			duluxgroup/hub~comm~mc~trade~dpu - exclusive
+			duluxgroup/hub~comm~main~leanapp - shared
+			duluxgroup/hub~comm~wcb~leanapp - shared
+
+Needed locks:
+	[duluxgroup/hub~comm~wcb~leanapp]
+
+Waiting threads: DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+
+Call stacks:
+DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~ecom~mc~chekout~dpu]
+	id:      171
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~ecom~mc~chekout~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~ecom~mc~chekout~dpu
+}
+
+java.lang.Thread.dumpThreads(Native Method)
+java.lang.Thread.getAllStackTraces(Thread.java:1620)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.getReasonForFailure(LockManagerImpl.java:351)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lock(LockManagerImpl.java:156)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lockDependants(LockManagerImpl.java:399)
+com.sap.engine.services.deploy.server.application.StopTransaction.lock(StopTransaction.java:127)
+com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:121)
+com.sap.engine.services.deploy.server.TransactionManager.registerTransaction(TransactionManager.java:80)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.stopRelatedApplication(ApplicationTransaction.java:760)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.needStopApplicationPhase(UpdateTransaction.java:700)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getContainersWhichNeedUpdate(UpdateTransaction.java:646)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getConcernedContainers(UpdateTransaction.java:577)
+com.sap.engine.services.deploy.server.application.DeployUtilTransaction.commonBegin(DeployUtilTransaction.java:145)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.begin(UpdateTransaction.java:234)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhasesOnOneServer(ApplicationTransaction.java:421)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhases(ApplicationTransaction.java:473)
+com.sap.engine.services.deploy.server.DeployServiceImpl.makeGlobalTransaction(DeployServiceImpl.java:1828)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:582)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:487)
+com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:74)
+com.sap.engine.services.dc.gd.impl.InitialApplicationDeployer.performDeployment(InitialApplicationDeployer.java:141)
+com.sap.engine.services.dc.gd.impl.InitialGenericDeliveryImpl.deploy(InitialGenericDeliveryImpl.java:57)
+com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:213)
+com.sap.engine.services.dc.cm.deploy.impl.BulkOnlineDeployProcessor.deploy(BulkOnlineDeployProcessor.java:67)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor$DeployProcessorHelper.visit(AbstractDeployProcessor.java:282)
+com.sap.engine.services.dc.cm.deploy.impl.DeploymentItemImpl.accept(DeploymentItemImpl.java:84)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor.deploy(AbstractDeployProcessor.java:100)
+com.sap.engine.services.dc.cm.deploy.impl.DeployThread.run(DeployThread.java:39)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:122)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:101)
+com.sap.engine.core.thread.execution.CentralExecutor$SingleThread.run(CentralExecutor.java:328)
+DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null {
+	creator:DeployThread[duluxgroup_hub~comm~mc~trade~dpu]
+	id:      159
+	task:    [Deploy Controller] - performing [deploy] operation of component [duluxgroup/hub~comm~mc~trade~dpu]
+	subtask: null
+	Active operations:
+	
+	update : duluxgroup/hub~comm~mc~trade~dpu
+}
+
+sun.misc.Unsafe.park(Native Method)
+java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:196)
+java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2116)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lock(LockManagerImpl.java:152)
+com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lockDependants(LockManagerImpl.java:399)
+com.sap.engine.services.deploy.server.application.StopTransaction.lock(StopTransaction.java:127)
+com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:121)
+com.sap.engine.services.deploy.server.TransactionManager.registerTransaction(TransactionManager.java:80)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.stopRelatedApplication(ApplicationTransaction.java:760)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.needStopApplicationPhase(UpdateTransaction.java:700)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getContainersWhichNeedUpdate(UpdateTransaction.java:646)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.getConcernedContainers(UpdateTransaction.java:577)
+com.sap.engine.services.deploy.server.application.DeployUtilTransaction.commonBegin(DeployUtilTransaction.java:145)
+com.sap.engine.services.deploy.server.application.UpdateTransaction.begin(UpdateTransaction.java:234)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhasesOnOneServer(ApplicationTransaction.java:421)
+com.sap.engine.services.deploy.server.application.ApplicationTransaction.makeAllPhases(ApplicationTransaction.java:473)
+com.sap.engine.services.deploy.server.DeployServiceImpl.makeGlobalTransaction(DeployServiceImpl.java:1828)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:582)
+com.sap.engine.services.deploy.server.DeployServiceImpl.update(DeployServiceImpl.java:487)
+com.sap.engine.services.dc.gd.impl.ApplicationDeployer.update(ApplicationDeployer.java:74)
+com.sap.engine.services.dc.gd.impl.InitialApplicationDeployer.performDeployment(InitialApplicationDeployer.java:141)
+com.sap.engine.services.dc.gd.impl.InitialGenericDeliveryImpl.deploy(InitialGenericDeliveryImpl.java:57)
+com.sap.engine.services.dc.cm.deploy.impl.OnlineDeployProcessor.performDelivery(OnlineDeployProcessor.java:213)
+com.sap.engine.services.dc.cm.deploy.impl.BulkOnlineDeployProcessor.deploy(BulkOnlineDeployProcessor.java:67)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor$DeployProcessorHelper.visit(AbstractDeployProcessor.java:282)
+com.sap.engine.services.dc.cm.deploy.impl.DeploymentItemImpl.accept(DeploymentItemImpl.java:84)
+com.sap.engine.services.dc.cm.deploy.impl.AbstractDeployProcessor.deploy(AbstractDeployProcessor.java:100)
+com.sap.engine.services.dc.cm.deploy.impl.DeployThread.run(DeployThread.java:39)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:122)
+com.sap.engine.core.thread.execution.Executable.run(Executable.java:101)
+com.sap.engine.core.thread.execution.CentralExecutor$SingleThread.run(CentralExecutor.java:328)
+
+	at com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lock(LockManagerImpl.java:162)
+	at com.sap.engine.services.deploy.server.utils.concurrent.impl.LockManagerImpl.lockDependants(LockManagerImpl.java:399)
+	at com.sap.engine.services.deploy.server.application.StopTransaction.lock(StopTransaction.java:127)
+	at com.sap.engine.services.deploy.server.TransactionManager.lock(TransactionManager.java:121)
+	... 24 more
+

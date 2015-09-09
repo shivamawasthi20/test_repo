@@ -1,0 +1,23 @@
+CR27-Left Panel Display|Home Hub|3-Column-Layout
+
+
+
+/Dcs/duluxgroup/hub/comm/mc/catalog/ui/_comp/src/dlx/catalog/ui/ui-repository.xml
+/Dcs/duluxgroup/hub/comm/mc/catalog/ui/_comp/src/META-INF/resources/dlx/catalog/home.xhtml
+/Dcs/duluxgroup/hub/comm/mc/main/md/_comp/src/dlx/main/md/interface-definition.xml
+/Dcs/duluxgroup/hub/comm/mc/main/md/_comp/src/dlx/main/md/metadata.xml
+/Dcs/duluxgroup/hub/comm/mc/main/ui/_comp/src/dlx/main/ui/ui-repository.xml
+/Dcs/duluxgroup/hub/comm/mc/main/ui/_comp/src/META-INF/resources/dlx/main/layouts/dlxHome3ColumnLayout.xhtml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/md/_comp/src/dlx/salestransactions/md/interface-definition.xml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/md/_comp/src/dlx/salestransactions/md/metadata.xml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/ui/_comp/src/dlx/salestransactions/ui/ui-repository.xml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/ui/_comp/src/META-INF/resources/dlx/salestransactions/basket.xhtml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/ui/_comp/src/META-INF/resources/dlx/salestransactions/layouts/dlxTrade3ColumnLayout.xhtml
+/Dcs/duluxgroup/hub/ecom/mc/salestransactions/ui/_comp/src/net/duluxgroup/wec/app/esales/module/transaction/ui/viewhandler/LeanItemDlxViewHandlerImpl.java
+/Dcs/duluxgroup/hub/mc/theme/md/_comp/src/META-INF/resources/dlx/comp.theme/styles/home/stylesheet1.css
+/Dcs/duluxgroup/hub/mc/theme/md/_comp/src/META-INF/resources/dlx/comp.theme/styles/skyDlx/stylesheet1.css
+/Dcs/duluxgroup/hub/mc/theme/md/_comp/src/META-INF/resources/dlx/comp.theme/styles/skyStaff/stylesheet1.css
+
+
+
+

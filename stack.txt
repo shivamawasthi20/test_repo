@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include<stdlib.h>
+
+#define MAXSIZE 100
+struct st
+{
+int top;
+int ele[MAXSIZE];
+};
+typedef struct st stack;
+void create(stack *s)
+{
+s->top=0;
+}
+void push(stack *s,int val)
+{
+if(isfull(s))
+{
+printf("Stack is full\n");
+return;
+}
+s->top=s->top+1;
+s->ele[s->top]=val;
+}
+int isfull(stack *s)
+{
+if(s->top>=MAXSIZE)
+{
+return 1;
+}
+else
+{
+return 0;
+}
+}
+int pop(stack *s)
+{
+int val;
+if(isempty(s))
+{
+printf("stack is empty\n");
+return;
+}
+else
+{
+val=s->ele[s->top];
+(s->top)--;
+}
+}
+int isempty(stack *s)
+{
+if(s->top==0)
+{
+return 1;
+}
+else
+return 0;
+}
+void printstack(stack *s)
+{
+int i;
+for(i=s->top;i>0;i--)
+{
+printf("%d\n",s->ele[i]);
+printf("------\n");
+}
+}
+
+int main()
+{
+stack *MYSTACK,**MYSTACK1,*MYSTACK2;
+int ch,val;
+MYSTACK=(stack *)malloc(sizeof(stack));
+MYSTACK2=(stack *)malloc(sizeof(stack));
+MYSTACK1=(stack *)malloc(sizeof(stack));
+
+create(MYSTACK1);
+create(MYSTACK2);
+
+
+
+
+
+push(MYSTACK,70);
+push(MYSTACK,60);
+push(MYSTACK,50);
+push(MYSTACK,40);
+push(MYSTACK,30);
+push(MYSTACK,20);
+push(MYSTACK,10);
+
+printstack(MYSTACK);
+
+
+towersofHanoi(MYSTACK,MySTACK1,MYSTACK2);
+
+
+
+
+
+
+}
+
+void towersofHanoi(MYSTACK,MySTACK1,MYSTACK2)
+{
+    
+    
+    
+    
+}
+
+
+

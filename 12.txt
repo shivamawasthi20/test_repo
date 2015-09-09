@@ -1,0 +1,12 @@
+code responsible for expand
+
+
+ShippingDetailsExpandedDlxViewHandler
+((CheckoutBODlx) getCheckoutBO()).setExpandShippingTab(false);
+
+
+shipping details expanding after cliccking on expand
+shippingexpandeddlx is after expand
+
+
+activity import from wc1 to wc2

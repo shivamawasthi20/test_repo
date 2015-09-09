@@ -1,0 +1,16 @@
+in check-out module in web channel builder
+checkout process config is wrong
+checkoutprocess-config.xml
+
+Null exception
+
+custom validator is not picked up
+
+3 column layout catalogproduct details page
+
+techical documentation
+list is not populated
+
+to check stopped servers:
+
+NWA->Operrations->Start,Stop Views->Filter

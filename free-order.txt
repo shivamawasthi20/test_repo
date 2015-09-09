@@ -1,0 +1,9 @@
+default single payer
+show column in item list on order ui
+
+checkout validation
+min order value-0
+
+
+Payment-
+enable payment by invoice-checked
